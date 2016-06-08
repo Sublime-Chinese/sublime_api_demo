@@ -19,7 +19,7 @@ class DemoViewSelCommand(sublime_plugin.TextCommand):
     def show_selections(self):
         print(x for x in self.view.sel())
 
-    # 获取唯一的选区
+    # 获取唯一的选区( sel()返回的List一定不为空, 失去焦点时, 选区为文件头, 即(0, 0) ).
     def get_single_selection(self):
         return self.view.sel()[0]
 
@@ -27,7 +27,7 @@ class DemoViewSelCommand(sublime_plugin.TextCommand):
     def get_multiple_selections(self):
         return self.view.sel()
 
-    # 获取当前光标的位置
+    # 获取当前光标的位置.
     def get_cursor_position(self):
         region = self.view.sel()[0]
         return region.end()
