@@ -7,7 +7,7 @@ Description : Returns a reference to the selection.
 """
 import sublime, sublime_plugin
 
-class DemoViewSelCommand(sublime_plugin.TextCommand):
+class ViewSelCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         self.show_selections()
         print(self.get_single_selection())
